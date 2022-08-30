@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Adactin Hotel Booking Validation</td>
+      <td>30 Aug 2022, 13:43</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">BookHotelStep.userShouldPerformInBookHotelEnterAnd(String,String,String,DataTable)</td>
+              <td>2</td>
+              <td class="duration" data-value="8072821550">8.072</td>
+              <td class="duration" data-value="8072821550">8.205</td>
+              <td class="duration" data-value="16145643100">16.145</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">BookHotelStep.userShouldPerformInBookHotelWithoutSelectingAnyFields()</td>
+              <td>1</td>
+              <td class="duration" data-value="77089100">0.077</td>
+              <td class="duration" data-value="77089100">0.077</td>
+              <td class="duration" data-value="77089100">0.077</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">BookHotelStep.userShouldVerifyAfterBookHotelSuccessfully(String)</td>
+              <td>2</td>
+              <td class="duration" data-value="55325700">0.055</td>
+              <td class="duration" data-value="55325700">0.058</td>
+              <td class="duration" data-value="110651400">0.110</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">BookHotelStep.userShouldVerifyAfterBookHotelTheseErrorMessageOccursAnd(String,String,String,String,String,String,String)</td>
+              <td>1</td>
+              <td class="duration" data-value="230413100">0.230</td>
+              <td class="duration" data-value="230413100">0.230</td>
+              <td class="duration" data-value="230413100">0.230</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">CancelBookingStep.userShouldPerformInBookedItineraryToCancelExisting(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3543091700">3.543</td>
+              <td class="duration" data-value="3543091700">3.543</td>
+              <td class="duration" data-value="3543091700">3.543</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">CancelBookingStep.userShouldPerformToCancelTheOrderId()</td>
+              <td>1</td>
+              <td class="duration" data-value="11072854200">11.072</td>
+              <td class="duration" data-value="11072854200">11.072</td>
+              <td class="duration" data-value="11072854200">11.072</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">CancelBookingStep.userShouldVerifyAfterCancelOrderMessageContainsSucessfully(String)</td>
+              <td>2</td>
+              <td class="duration" data-value="4530393650">4.530</td>
+              <td class="duration" data-value="4530393650">9.060</td>
+              <td class="duration" data-value="9060787300">9.060</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">CommonSteps.userShouldVerifyAfterLoginSuccessfully(String)</td>
+              <td>12</td>
+              <td class="duration" data-value="61305950">0.061</td>
+              <td class="duration" data-value="61305950">0.090</td>
+              <td class="duration" data-value="735671400">0.735</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Hooksclass.afterScenario(Scenario)</td>
+              <td>15</td>
+              <td class="duration" data-value="1208190846">1.208</td>
+              <td class="duration" data-value="1208190846">2.335</td>
+              <td class="duration" data-value="18122862700">18.122</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Hooksclass.beforeScenario()</td>
+              <td>15</td>
+              <td class="duration" data-value="8087234526">8.087</td>
+              <td class="duration" data-value="8087234526">18.038</td>
+              <td class="duration" data-value="121308517900">2:1.308</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">LoginPageStep.userShouldOnAdactinPage()</td>
+              <td>13</td>
+              <td class="duration" data-value="22819684">0.022</td>
+              <td class="duration" data-value="22819684">0.296</td>
+              <td class="duration" data-value="296655900">0.296</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">LoginPageStep.userShouldPerformLoginEnter(String,String)</td>
+              <td>14</td>
+              <td class="duration" data-value="3489801585">3.489</td>
+              <td class="duration" data-value="3489801585">8.703</td>
+              <td class="duration" data-value="48857222200">48.857</td>
+              <td class="failed">85.71%</td>
+            </tr>
+            <tr>
+              <td class="location">LoginPageStep.userShouldPerformLoginEnterWithEnterKey(String,String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3550957400">3.550</td>
+              <td class="duration" data-value="3550957400">3.550</td>
+              <td class="duration" data-value="3550957400">3.550</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">LoginPageStep.userShouldVerifyAfterLoginUnsuccessfulErrorMessageOccurs(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="46890900">0.046</td>
+              <td class="duration" data-value="46890900">0.046</td>
+              <td class="duration" data-value="46890900">0.046</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">SearchHotelStep.userShouldPerfomInSearchHotelEnterAnd(String,String,String,String,String,String,String,String)</td>
+              <td>7</td>
+              <td class="duration" data-value="2226517742">2.226</td>
+              <td class="duration" data-value="2226517742">3.088</td>
+              <td class="duration" data-value="15585624200">15.585</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">SearchHotelStep.userShouldPerfomOnlyMandatoryFieldInSearchHotelEnterAnd(String,String,String,String,String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1559073800">1.559</td>
+              <td class="duration" data-value="1559073800">1.559</td>
+              <td class="duration" data-value="1559073800">1.559</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">SearchHotelStep.userShouldPerfomWithoutEnterAnyFieldsInSearchHotels()</td>
+              <td>1</td>
+              <td class="duration" data-value="76549500">0.076</td>
+              <td class="duration" data-value="76549500">0.076</td>
+              <td class="duration" data-value="76549500">0.076</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">SearchHotelStep.userShouldVerifyAfterSearchHotelErrorMessageInCheckInDateAndCheckOutDateAnd(String,String)</td>
+              <td>1</td>
+              <td class="duration" data-value="65320500">0.065</td>
+              <td class="duration" data-value="65320500">0.065</td>
+              <td class="duration" data-value="65320500">0.065</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">SearchHotelStep.userShouldVerifyAfterSearchHotelErrorMessageInLocations(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="40218300">0.040</td>
+              <td class="duration" data-value="40218300">0.040</td>
+              <td class="duration" data-value="40218300">0.040</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">SearchHotelStep.userShouldVerifyAfterSearchHotelIsSuccessfull(String)</td>
+              <td>7</td>
+              <td class="duration" data-value="46086757">0.046</td>
+              <td class="duration" data-value="46086757">0.067</td>
+              <td class="duration" data-value="322607300">0.322</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">SelectHotelStep.userShouldPerformInSelectHotelByClickContinue()</td>
+              <td>4</td>
+              <td class="duration" data-value="1118586250">1.118</td>
+              <td class="duration" data-value="1118586250">2.022</td>
+              <td class="duration" data-value="4474345000">4.474</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">SelectHotelStep.userShouldPerformInSelectHotelByNotClickingAnyHotelField()</td>
+              <td>1</td>
+              <td class="duration" data-value="75143000">0.075</td>
+              <td class="duration" data-value="75143000">0.075</td>
+              <td class="duration" data-value="75143000">0.075</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">SelectHotelStep.userShouldVerifyAfterSelectHotelErrorMessageOccurs(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="35011000">0.035</td>
+              <td class="duration" data-value="35011000">0.035</td>
+              <td class="duration" data-value="35011000">0.035</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">SelectHotelStep.userShouldVerifyAfterSelectHotelIsSuccessfull(String)</td>
+              <td>4</td>
+              <td class="duration" data-value="41615050">0.041</td>
+              <td class="duration" data-value="41615050">0.056</td>
+              <td class="duration" data-value="166460200">0.166</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>24</td>
+            <td>109</td>
+            <td class="duration">2.344</td>
+            <td class="duration">2:1.308</td>
+            <td class="duration">4:15.559</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
